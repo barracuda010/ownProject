@@ -1,0 +1,121 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+/* -----------------------HEADER----------------- */
+.page_header {
+  height: 60px;
+  background-color: #081c24;
+}
+
+.container {
+  width: 1240px;
+  margin: 0 auto;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 15px;
+}
+
+.logo {
+  font-weight: 400;
+  font-size: 24px;
+  text-decoration: none;
+  margin-right: 15px;
+  background: -webkit-linear-gradient(#bbefd8, #01d277);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.menu_category {
+  list-style: none;
+  display: flex;
+}
+
+.menu_list_ref {
+  text-decoration: none;
+  margin-right: 20px;
+  color: #ffff;
+}
+
+.menu_list a:hover {
+  transition: color 0.2s ease-in-out;
+  color: #fed136;
+}
+
+/* --------------------SEARCH---------------- */
+.search_bar {
+  padding-top: 115px;
+}
+
+.main_intro {
+  background-image: url(../images/background.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 392px;
+  background-position: center;
+  margin-bottom: 50px;
+}
+
+.welcome_text {
+  color: #ffff;
+  font-size: 40px;
+  margin-left: 30px;
+}
+
+.welcome_text_info {
+  color: #ffff;
+  margin: 0 0 50px 30px;
+}
+
+.search_form {
+  margin-left: 30px;
+}
+
+.input_text {
+  height: 40px;
+  width: 90%;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding-left: 10px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.search_form button {
+  right: 0px;
+  width: 60px;
+  height: 40px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  color: #ffff;
+  font-size: 14px;
+  font-weight: 700;
+  outline: none;
+  background-color: aquamarine;
+}
+
+.potato {
+  color: red;
+}
