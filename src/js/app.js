@@ -1,2 +1,4 @@
 import "../css/main.scss";
-import movies from '../movieBase/moviesDataBase.js'
+// import "../css/searchmovies.scss";
+import movies from "../movieBase/moviesDataBase.js";
+// import template from "";

@@ -1,3 +1,6 @@
+@import './searchmovies.scss';
+@import '../main-page/page.scss';
+
 html {
   box-sizing: border-box;
 }
@@ -15,7 +18,7 @@ html {
 }
 
 body {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 /* -----------------------HEADER----------------- */
@@ -114,8 +117,4 @@ body {
   font-weight: 700;
   outline: none;
   background-color: aquamarine;
-}
-
-.potato {
-  color: red;
 }

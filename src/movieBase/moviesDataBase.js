@@ -1,4 +1,5 @@
 import SearchMovies from './fetchMovies.js'
+require('../css/searchmovies.scss')
 
 const movieUL = document.querySelector('.new_movies')
 const form = document.querySelector('#search-form');

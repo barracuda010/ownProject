@@ -1,63 +1,78 @@
-var path = require('path');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
+var path = require("path");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var HtmlWebpackPlugin = require("html-webpack-plugin");
+var CleanWebpackPlugin = require("clean-webpack-plugin");
 
 var extractPlugin = new ExtractTextPlugin({
-    filename: 'main.css'
+    filename: "main.scss",
 });
 
 module.exports = {
-    entry: './src/js/app.js',
+    entry: {
+        index: "./src/js/app.js",
+        main: "./src/main-page/main.js",
+        result: "./src/movieBase/moviesDataBase.js",
+
+    },
     output: {
-        path: path.resolve(__dirname, 'dist'),
-        filename: 'bundle.js',
+        path: path.resolve(__dirname, "dist"),
+        filename: "[name].js",
         // publicPath: '/dist'
     },
     module: {
         rules: [{
                 test: /\.js$/,
                 use: [{
-                    loader: 'babel-loader',
+                    loader: "babel-loader",
                     options: {
-                        presets: ['es2015']
-                    }
-                }]
+                        presets: ["es2015"],
+                    },
+                }, ],
             },
             {
                 test: /\.scss$/,
                 use: extractPlugin.extract({
-                    use: ['css-loader', 'sass-loader']
-                })
+                    use: ["css-loader", "sass-loader"],
+                }),
             },
             {
                 test: /\.html$/,
-                use: ['html-loader']
+                use: ["html-loader"],
             },
             {
                 test: /\.(jpg|png)$/,
                 use: [{
-                    loader: 'file-loader',
+                    loader: "file-loader",
                     options: {
-                        name: '[name].[ext]',
-                        outputPath: 'img/',
-                        publicPath: 'img/'
-                    }
-                }]
-            }
-        ]
+                        name: "[name].[ext]",
+                        outputPath: "img/",
+                        publicPath: "img/",
+                    },
+                }, ],
+            },
+            {
+                test: /\.hbs/,
+                loader: "handlebars-loader",
+                exclude: /(node_modules|bower_components)/,
+            },
+        ],
     },
     plugins: [
         extractPlugin,
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'src/index.html'
+            filename: "index.html",
+            template: "src/index.html",
         }),
         new HtmlWebpackPlugin({
-            filename: 'searchmovies.html',
-            template: 'src/movieBase/searchmovies.html',
-            chunks: ["searchmovies"]
+            filename: "searchmovies.html",
+            template: "src/movieBase/searchmovies.html",
+            chunks: ["searchmovies"],
         }),
-        new CleanWebpackPlugin(['dist'])
-    ]
+        new HtmlWebpackPlugin({
+            filename: "main.html",
+            template: "src/main-page/tmpl.html",
+            chunks: ["main"],
+        }),
+        new CleanWebpackPlugin(["dist"]),
+    ],
 };
