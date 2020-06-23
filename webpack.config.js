@@ -11,35 +11,25 @@ module.exports = {
   devtool: "eval-cheap-module-source-map",
   entry: {
     index: "./src/js/app.js",
-    main: "./src/main-page/main.js",
-    result: "./src/movieBase/moviesDataBase.js",
+    main: "./src/searchResults/main.js",
   },
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    // publicPath: '/dist'
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.js$/,
-        use: [
-          {
-            loader: "babel-loader",
-            options: {
-              presets: ["es2015"],
-            },
+        use: [{
+          loader: "babel-loader",
+          options: {
+            presets: ["es2015"],
           },
-        ],
+        }, ],
       },
       {
         test: /\.scss$/i,
-        use: [
-          "style-loader",
-          "css-loader",
-          "sass-loader",
-          // Please note we are not running postcss here
-        ],
+        use: ["style-loader", "css-loader", "sass-loader"],
       },
       {
         test: /\.html$/,
@@ -47,16 +37,14 @@ module.exports = {
       },
       {
         test: /\.(jpg|png)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "img/",
-              publicPath: "img/",
-            },
+        use: [{
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "img/",
+            publicPath: "img/",
           },
-        ],
+        }, ],
       },
       {
         test: /\.hbs/,
@@ -73,13 +61,8 @@ module.exports = {
       chanks: ["index"],
     }),
     new HtmlWebpackPlugin({
-      filename: "searchmovies.html",
-      template: "src/movieBase/searchmovies.html",
-      chunks: ["searchmovies"],
-    }),
-    new HtmlWebpackPlugin({
-      filename: "main.html",
-      template: "src/main-page/tmpl.html",
+      filename: "foundFilms.html",
+      template: "src/searchResults/tmpl.html",
       chunks: ["main"],
     }),
     new CleanWebpackPlugin(["dist"]),

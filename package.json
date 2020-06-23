@@ -29,6 +29,7 @@
     "webpack-dev-server": "^2.4.2"
   },
   "dependencies": {
+    "handlebars": "^4.7.6",
     "style-loader": "^1.2.1"
   }
 }
