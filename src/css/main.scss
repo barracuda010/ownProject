@@ -115,3 +115,30 @@ body {
   outline: none;
   background-color: aquamarine;
 }
+
+// =================== POPULAR TV ================ //
+.pop_tv {
+  margin-bottom: 20px;
+}
+
+.new_movies {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.tv_list {
+  list-style: none;
+  margin-left: 40px;
+
+}
+
+.tv_list_img {
+  width: 150px;
+  min-width: 150px;
+}
+
+.tv_list_name {
+  font-size: 14px;
+}

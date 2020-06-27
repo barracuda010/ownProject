@@ -1,2 +1,2 @@
 import "../css/main.scss";
-import movies from "../index.js";
+import movies from "../main-page/index.js";

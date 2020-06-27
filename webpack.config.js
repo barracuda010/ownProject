@@ -57,7 +57,7 @@ module.exports = {
     // extractPlugin,
     new HtmlWebpackPlugin({
       filename: "index.html",
-      template: "src/index.html",
+      template: "src/main-page/index.html",
       chanks: ["index"],
     }),
     new HtmlWebpackPlugin({
