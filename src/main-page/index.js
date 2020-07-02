@@ -4,6 +4,9 @@ import popularListTV from './popular-list.hbs'
 
 const popularUL = document.querySelector(".new_movies");
 const form = document.querySelector("#search-form");
+const btnLeft = document.querySelector('.step_left');
+const btnRight = document.querySelector('.step_right')
+let left = 0;
 
 //  1.Отлавливаем инпут
 form.addEventListener("submit", handleInput);
@@ -29,3 +32,24 @@ function buildListItemsMarkup(items) {
 function insertHTML(items) {
     popularUL.insertAdjacentHTML('beforeend', items)
 }
+// ===========Слайдер
+btnLeft.addEventListener('click', sliderLeft);
+btnRight.addEventListener('click', sliderRight)
+
+function sliderLeft() {
+    if (left < -2550) {
+        left = 0
+    }
+    left = left - 190;
+    popularUL.style.left = left + 'px';
+}
+
+function sliderRight() {
+    if (left >= 0) {
+        left = -190
+    }
+    left = left + 190;
+    popularUL.style.left = left + 'px';
+
+}
+// =========Слайдер

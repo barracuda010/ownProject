@@ -123,15 +123,14 @@ body {
 
 .new_movies {
   display: flex;
-  justify-content: space-between;
-  flex-direction: row;
-  flex-wrap: wrap;
+  position: relative;
+  left: 0;
+  transition: all ease 0.5s;
 }
 
 .tv_list {
   list-style: none;
   margin-left: 40px;
-
 }
 
 .tv_list_img {
@@ -141,4 +140,27 @@ body {
 
 .tv_list_name {
   font-size: 14px;
+}
+// ====SLIDER
+.slider {
+  overflow: hidden;
+}
+.step_buttons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.step_left {
+  margin-right: 10px;
+}
+.right {
+  margin-left: 10px;
+}
+.step_buttons_style {
+  background: #0677ba;
+  color: #ffff;
+  border-radius: 5px;
+  border: none;
+  height: 24px;
+  width: 24px;
 }
