@@ -1,0 +1,11 @@
+{{#each this}}
+<li class="tv_list">
+    <a href="">
+        <img class="tv_list_img" src="https://image.tmdb.org/t/p/w220_and_h330_face{{poster_path}}"
+            alt="{{original_name}}">
+        <div class="tv_list_rate">{{vote_average}}</div>
+        <h2 class="tv_list_name">{{title}}</h2>
+    </a>
+    <div class="show_date">{{release_date}}</div>
+</li>
+{{/each}}

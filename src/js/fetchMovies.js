@@ -24,5 +24,13 @@ export default {
       .then((data) => {
         return data.results
       })
+  },
+  fetchPopMovies() {
+    const reqParams = `movie/top_rated?api_key=${apiKey}&language=ru-RU&page=1`;
+    return fetch(baseUrl + reqParams)
+      .then((res) => res.json())
+      .then((data) => {
+        return data.results
+      })
   }
 };

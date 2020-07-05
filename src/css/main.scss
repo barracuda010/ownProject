@@ -16,12 +16,13 @@ html {
 
 body {
   font-family: "Ubuntu", sans-serif;
+  background-color: rgb(12, 11, 11);
 }
 
 /* -----------------------HEADER----------------- */
 .page_header {
   height: 60px;
-  background-color: #081c24;
+  background-color: #121213;
 }
 
 .container {
@@ -41,9 +42,7 @@ body {
   font-size: 24px;
   text-decoration: none;
   margin-right: 15px;
-  background: -webkit-linear-gradient(#bbefd8, #01d277);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: rgb(253, 9, 9);
 }
 
 .menu_category {
@@ -68,7 +67,7 @@ body {
 }
 
 .main_intro {
-  background-image: url(../images/background.jpg);
+  background-image: url(../images/background6.jpg);
   background-repeat: no-repeat;
   background-size: 100%;
   height: 392px;
@@ -119,6 +118,7 @@ body {
 // =================== POPULAR TV ================ //
 .pop_tv {
   margin-bottom: 20px;
+  color: rgb(247, 241, 241);
 }
 
 .new_movies {
@@ -133,34 +133,120 @@ body {
   margin-left: 40px;
 }
 
+.tv_list a {
+  text-decoration: none;
+}
+
 .tv_list_img {
+  border-radius: 5px;
   width: 150px;
   min-width: 150px;
 }
 
+.tv_list_rate {
+  background-color: green;
+  border-radius: 3px;
+  width: 36px;
+  height: 18px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  position: absolute;
+  top: 0px;
+}
+
 .tv_list_name {
   font-size: 14px;
+  margin-bottom: 5px;
+  color: white;
 }
+
+.show_date {
+  color: white;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 // ====SLIDER
 .slider {
   overflow: hidden;
+  position: relative;
 }
+
 .step_buttons {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 }
+
 .step_left {
-  margin-right: 10px;
+  position: absolute;
+  left: 0%;
+  top: 22%;
+  z-index: 10;
 }
-.right {
-  margin-left: 10px;
+
+.click_left {
+  position: absolute;
+  left: 0%;
+  top: 30%;
+  z-index: 10;
 }
+
+.step_right {
+  position: absolute;
+  right: 0%;
+  top: 22%;
+  z-index: 10;
+}
+
+.click_right {
+  position: absolute;
+  right: 0%;
+  top: 30%;
+  z-index: 10;
+}
+
 .step_buttons_style {
-  background: #0677ba;
-  color: #ffff;
-  border-radius: 5px;
+  background-color: rgb(247, 241, 241);
   border: none;
-  height: 24px;
-  width: 24px;
+  color: rgb(168, 167, 167);
+  width: 40px;
+  height: 40px;
+  font-weight: 700;
+  font-size: 16px;
+  border-radius: 50%;
+  outline: none
+}
+
+.step_buttons_style:hover {
+  transition: all ease 0.1s;
+  width: 42px;
+  height: 42px;
+}
+
+// ===========POPULAR MOVIES
+.pop_movies {
+  display: flex;
+  position: relative;
+  left: 0;
+  transition: all ease 0.5s;
+}
+
+// ===========Page Footer
+.page_footer {
+  height: 100px;
+  width: auto;
+  background-color: #121213;
+}
+
+.social {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 40px;
+}
+
+.social_icon {
+  margin-right: 20px;
 }

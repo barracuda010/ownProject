@@ -1,11 +1,15 @@
 import SearchMovies from "../js/fetchMovies";
 import popularTV from '../js/fetchMovies'
 import popularListTV from './popular-list.hbs'
+import popularMovies from './pop-movies.hbs'
 
 const popularUL = document.querySelector(".new_movies");
+const popMovies = document.querySelector('.pop_movies');
 const form = document.querySelector("#search-form");
 const btnLeft = document.querySelector('.step_left');
 const btnRight = document.querySelector('.step_right')
+const clickLeft = document.querySelector('.click_left')
+const clickRight = document.querySelector('.click_right')
 let left = 0;
 
 //  1.Отлавливаем инпут
@@ -52,4 +56,35 @@ function sliderRight() {
     popularUL.style.left = left + 'px';
 
 }
-// =========Слайдер
+clickLeft.addEventListener('click', stepLeft);
+clickRight.addEventListener('click', stepRight)
+
+function stepLeft() {
+    if (left < -2550) {
+        left = 0
+    }
+    left = left - 190;
+    popMovies.style.left = left + 'px';
+}
+
+function stepRight() {
+    if (left >= 0) {
+        left = -190
+    }
+    left = left + 190;
+    popMovies.style.left = left + 'px';
+
+}
+// =========Популярные фильмы
+popularTV.fetchPopMovies().then(res => {
+    const markUp = popMoviesList(res)
+    putInHTML(markUp)
+})
+
+function popMoviesList(items) {
+    return popularMovies(items)
+}
+
+function putInHTML(items) {
+    popMovies.insertAdjacentHTML('beforeend', items)
+}
